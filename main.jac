@@ -285,9 +285,9 @@ walker api_generate_docs {
     }
     
     can execute with `root entry {
-        print("API Request received for: " + repo_url);
+        print("API Request received for: " + here.repo_url);
         
-        if not repo_url {
+        if not here.repo_url {
             result = {
                 "status": "error",
                 "message": "repo_url is required"
@@ -298,8 +298,8 @@ walker api_generate_docs {
         
         # Spawn supervisor walker on root
         root spawn supervisor(
-            repo_url=repo_url,
-            output_dir=output_dir
+            repo_url=here.repo_url,
+            output_dir=here.output_dir
         );
         
         result = {
