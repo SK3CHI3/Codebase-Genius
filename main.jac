@@ -298,8 +298,8 @@ walker api_generate_docs {
         
         # Spawn supervisor walker on root
         root spawn supervisor(
-            repo_url=repo_url,
-            output_dir=output_dir
+            repo_url=self.repo_url,
+            output_dir=self.output_dir
         );
         
         result = {
